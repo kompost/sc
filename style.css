@@ -1,3 +1,9 @@
 .modal-content {
    background-image: url(./images_for_development/SC_v2.jpg);
 }
+
+#myModal1 {
+    background: url(./images_for_development/SC_v2.jp);
+    background-repeat: no-repeat;
+    background-size: auto;
+}
