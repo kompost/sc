@@ -339,6 +339,14 @@
 <link rel="stylesheet" type="text/css" href="./stylesheet.css">
 <script src="./countdown.js"></script>
 
+<script type="text/javascript">
+    $(window).on('load',function(){
+    	setTimeout(function () {
+      	$('#scModal').modal('show');
+    	}, 6000);
+    });
+</script>
+
 <a data-toggle="modal" href="#scModal" class="btn btn-primary btn-lg">Launch demo modal</a>
 	<div class="modal fade" id="scModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
 	  <div class="modal-dialog">
