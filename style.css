@@ -1,3 +1,4 @@
 .modal-content {
    background-image: url(./images_for_development/SC_v2.jpg);
+   background-size: cover;
 }
