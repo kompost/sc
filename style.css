@@ -1,4 +1,10 @@
+body .modal-admin {
+    /* new custom width */
+    width: 750px;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+    margin-left: -375px;
+}
+
 .modal-content {
    background-image: url(./images_for_development/SC_v2.jpg);
-   background-size: cover;
 }
