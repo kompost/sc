@@ -1,4 +1,13 @@
 var countDownDate = 691199999 + new Date().getTime();
+
+function prefixZero(value) {
+    if (value > 9) {
+        return value;
+    } else {
+        return "0"+value;
+    }
+}
+
 var x = setInterval(function() {
 
     // Get todays date and time
@@ -13,13 +22,11 @@ var x = setInterval(function() {
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Output the result in an element with id="countdown"
-    document.getElementById("countdown").innerHTML = days + "    :    " + hours + "    :    "
-    + minutes + "    :    " + seconds + "";
 
-    // If the count down is over, write some text
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("countdown").innerHTML = "EXPIRED";
-    }
+
+    // Output the result in an element with id="countdown"
+    document.getElementById("countdown").innerHTML = prefixZero(days) + " : " + prefixZero(hours) + " : "
+    + prefixZero(minutes) + " : " + prefixZero(seconds) + "";
+
+
 }, 1000);
