@@ -1,4 +1,3 @@
-// Counting down from 8 days in the future minus 1 milisecond
 var countDownDate = 691199999 + new Date().getTime();
 var x = setInterval(function() {
 
@@ -14,13 +13,13 @@ var x = setInterval(function() {
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = days + "  " + hours + "  "
-    + minutes + "  " + seconds + "";
+    // Output the result in an element with id="countdown"
+    document.getElementById("countdown").innerHTML = days + "    :    " + hours + "    :    "
+    + minutes + "    :    " + seconds + "";
 
     // If the count down is over, write some text
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
+        document.getElementById("countdown").innerHTML = "EXPIRED";
     }
 }, 1000);
