@@ -362,7 +362,8 @@
 			});
 
 			$('#CTA').on('click',function(){
-				console.log("this shit works");
+				createCookie('visited', true, 1);
+				$('#scModal').modal('hide');
 			});
 	</script>
 
