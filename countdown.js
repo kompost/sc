@@ -81,7 +81,7 @@ var x = setInterval(function() {
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
+    console.log(seconds);
     // Output the result in an element with id="countdown"
     document.getElementById("countdown").innerHTML = prefixZero(days) + " : " + prefixZero(hours) + " : "
     + prefixZero(minutes) + " : " + prefixZero(seconds) + "";
