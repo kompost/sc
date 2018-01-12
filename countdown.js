@@ -31,14 +31,14 @@ function getCookie(cname) {
 function checkCookie() {
     var user = getCookie("username");
     if (user != "") {
-        alert("Welcome again " + user);
+        console.log(user);
     } else {
         setCookie("username", "guest", 7);
     }
 }
 
 console.log("testing");
-console.log(checkCookie());
+
 var countDownDate = 691199999 + new Date().getTime();
 var x = setInterval(function() {
 
