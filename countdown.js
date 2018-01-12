@@ -31,20 +31,25 @@ function prefixZero(value) {
     }
 }
 
-var lastVisited = readCookie('lastVisited');
+// var lastVisited = readCookie('lastVisited');
+//
+// if(lastVisited){
+//   var expires = getCookie('expiration');
+//   displayCountdown(new Date().getTime(), expires)
+// } else {
+//   createCookie('displayOverlay', true, 1);
+//   createCookie('lastVisited', new Date().getTime(), 1);
+//   createCookie('expiration', 691199999 + new Date().getTime(), 8);
+//   displayCountdown(new Date().getTime(), 691199999 + new Date().getTime());
+// }
 
-if(lastVisited){
-  var expires = getCookie('expiration');
-  displayCountdown(new Date().getTime(), expires)
-} else {
-  createCookie('displayOverlay', true, 1);
-  createCookie('lastVisited', new Date().getTime(), 1);
-  createCookie('expiration', 691199999 + new Date().getTime(), 8);
-  displayCountdown(new Date().getTime(), 691199999 + new Date().getTime());
-}
+eraseCookie('displayOverlay');
+eraseCookie('expiration');
+eraseCookie('lastVisited');
 
+var x;
 function displayCountdown(lastVis, expiration){
-    var x = setInterval(function() {
+    x = setInterval(function() {
 
         // Get todays date and time
         var now = new Date().getTime();
