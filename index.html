@@ -339,11 +339,18 @@
 	<script type="text/javascript">
 
 			createCookie('lastVisited', new Date().getTime(), 8);
-			console.log(readCookie('lastVisited'));
+			var lastVisited = readCookie('lastVisited');
 
+			var saleLength = 8 * 24 * 60 * 60 //in miliseconds
+			if(!(lastVisited)){
+				createCookie('salesExpiration', new Date().getTime() + saleLength, 8);
+			}
+
+			console.log(readCookie('salesExpiration'));
+
+			displayCountdown(50000, 800000);
 			$(window).on('load',function(){
 				setTimeout(function () {
-					displayCountdown(50000, 800000);
 					$('#scModal').modal('show');
 				}, 6000);
 			});
