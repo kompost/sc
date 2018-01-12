@@ -338,6 +338,10 @@
 
 	<script type="text/javascript">
 
+			// eraseCookie('lastVisited');
+			// eraseCookie('visited');
+			// eraseCookie('salesExpiration');
+
 			createCookie('lastVisited', new Date().getTime(), 8);
 			var lastVisited = readCookie('lastVisited');
 			var visited = readCookie('visited');
@@ -348,16 +352,17 @@
 				createCookie('visited', true, 1);
 			}
 			var salesExpiration = readCookie('salesExpiration');
-			displayCountdown(lastVisited, salesExpiration);
 
-			console.log(lastVisited);
-			console.log(salesExpiration);
-			console.log(new Date().getTime());
 
+			displayCountdown(salesExpiration+1700000000000);
 			$(window).on('load',function(){
 				setTimeout(function () {
 					$('#scModal').modal('show');
 				}, 6000);
+			});
+
+			$('#CTA').on('click',function(){
+				console.log("this shit works");
 			});
 	</script>
 
