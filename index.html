@@ -356,7 +356,6 @@
 			var cta = readCookie('CTA');
 			console.log(cta);
 			if(cta == null){
-				createCookie('CTA', now, 1);
 				displayCountdown(salesExpiration);
 				$(window).on('load',function(){
 					setTimeout(function () {
@@ -368,6 +367,7 @@
 
 			$('#CTA').on('click',function(){
 				createCookie('visited', true, 1);
+				createCookie('CTA', now, 1);
 				$('#scModal').modal('hide');
 			});
 	</script>
