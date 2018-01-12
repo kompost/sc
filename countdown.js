@@ -7,6 +7,7 @@ function prefixZero(value) {
 }
 
 var x;
+var distance;
 function displayCountdown(lastVis, expiration){
     x = setInterval(function() {
 
@@ -14,7 +15,7 @@ function displayCountdown(lastVis, expiration){
         //var now = new Date().getTime();
 
         // Find the distance between now an the count down date
-        var distance = expiration - lastVis;
+        distance = expiration;
 
         // Time calculations for days, hours, minutes and seconds
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
