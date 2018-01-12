@@ -339,6 +339,7 @@
 	<script type="text/javascript">
 
 			createCookie('lastVisited', new Date().getTime(), 8);
+			var lastVisited = readCookie('lastVisited');
 			var visited = readCookie('visited');
 
 			var saleLength = 8 * 24 * 60 * 60 //in miliseconds
@@ -346,10 +347,12 @@
 				createCookie('salesExpiration', new Date().getTime() + saleLength, 8);
 				createCookie('visited', true, 1);
 			}
+			var salesExpiration = readCookie('salesExpiration');
+			displayCountdown(lastVisited, salesExpiration);
 
-			console.log(readCookie('salesExpiration'));
+			console.log(lastVisited);
+			console.log(salesExpiration);
 
-			displayCountdown(50000, 800000);
 			$(window).on('load',function(){
 				setTimeout(function () {
 					$('#scModal').modal('show');
