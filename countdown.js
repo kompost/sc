@@ -30,6 +30,8 @@ function displayCountdown(lastVis, expiration){
     }, 1000);
 }
 
+displayCountdown(50000, 800000);
+
 // var distance = 691199999;
 // var x = setInterval(function() {
 //

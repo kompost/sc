@@ -339,8 +339,8 @@
 	<script type="text/javascript">
 
 			createCookie('lastVisited', new Date().getTime(), 8);
+			console.log(readCookie('lastVisited'));
 
-			displayCountdown(getCookie('lastVisited')+500000, getCookie('lastVisited'));
 			$(window).on('load',function(){
 				setTimeout(function () {
 					$('#scModal').modal('show');
