@@ -1,5 +1,3 @@
-var countDownDate = 691199999 + new Date().getTime();
-
 function prefixZero(value) {
     if (value > 9) {
         return value;
@@ -8,6 +6,39 @@ function prefixZero(value) {
     }
 }
 
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000 - 1));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user = getCookie("username");
+    if (user != "") {
+        countDownDate =
+    } else {
+        setCookie("username", "guest", 8);
+    }
+}
+
+console.log(checkCookie());
+var countDownDate = 691199999 + new Date().getTime();
 var x = setInterval(function() {
 
     // Get todays date and time
@@ -27,6 +58,4 @@ var x = setInterval(function() {
     // Output the result in an element with id="countdown"
     document.getElementById("countdown").innerHTML = prefixZero(days) + " : " + prefixZero(hours) + " : "
     + prefixZero(minutes) + " : " + prefixZero(seconds) + "";
-
-
 }, 1000);
