@@ -31,21 +31,17 @@ function prefixZero(value) {
     }
 }
 
-// var lastVisited = readCookie('lastVisited');
-//
-// if(lastVisited){
-//   var expires = getCookie('expiration');
-//   displayCountdown(new Date().getTime(), expires)
-// } else {
-//   createCookie('displayOverlay', true, 1);
-//   createCookie('lastVisited', new Date().getTime(), 1);
-//   createCookie('expiration', 691199999 + new Date().getTime(), 8);
-//   displayCountdown(new Date().getTime(), 691199999 + new Date().getTime());
-// }
+var lastVisited = readCookie('lastVisited');
 
-eraseCookie('displayOverlay');
-eraseCookie('expiration');
-eraseCookie('lastVisited');
+if(lastVisited){
+  var expires = readCookie('expiration');
+  displayCountdown(new Date().getTime(), expires)
+} else {
+  createCookie('displayOverlay', true, 1);
+  createCookie('lastVisited', new Date().getTime(), 1);
+  createCookie('expiration', 691199999 + new Date().getTime(), 8);
+  displayCountdown(new Date().getTime(), 691199999 + new Date().getTime());
+}
 
 var x;
 function displayCountdown(lastVis, expiration){
