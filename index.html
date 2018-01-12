@@ -346,6 +346,9 @@
 			var lastVisited = readCookie('lastVisited');
 			var visited = readCookie('visited');
 
+			console.log("last visited: " + lastVisited.toGMTString());
+			console.log("visited: " + visited);
+
 			var saleLength = 8 * 24 * 60 * 60 * 1000 //in miliseconds
 			if(visited == null || false){
 				createCookie('salesExpiration', now + saleLength, 8);
@@ -354,7 +357,7 @@
 
 			oneDayInMS = 24 * 60 * 60 * 1000;
 			var cta = readCookie('CTA');
-			console.log(cta);
+			console.log("Call to action avtivated: " + cta);
 			if(cta == null){
 				displayCountdown(salesExpiration);
 				$(window).on('load',function(){
@@ -366,7 +369,6 @@
 
 
 			$('#CTA').on('click',function(){
-				createCookie('visited', true, 1);
 				createCookie('CTA', now, 1);
 				$('#scModal').modal('hide');
 			});
