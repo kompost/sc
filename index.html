@@ -339,11 +339,12 @@
 	<script type="text/javascript">
 
 			createCookie('lastVisited', new Date().getTime(), 8);
-			var lastVisited = readCookie('lastVisited');
+			var visited = readCookie('visited');
 
 			var saleLength = 8 * 24 * 60 * 60 //in miliseconds
-			if(!(lastVisited)){
+			if(visited == null){
 				createCookie('salesExpiration', new Date().getTime() + saleLength, 8);
+				createCookie('visited', true, 1);
 			}
 
 			console.log(readCookie('salesExpiration'));
